@@ -181,23 +181,6 @@ $result = mysqli_query($conn, $sql);
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
 <p>
-<!--
-
-Alla data <?php echo $lastUpdate;?> sono presenti in Italia un totale di <?php echo $Array_totale_casi[0];?> di cui:
-
- <ul>
- <li> <?php echo $Array_deceduti[0];?> persone che ci hanno lasciato.</li>
-  <li> <?php echo $Array_tamponi[0];?> tamponi.</li>
-  <li> <?php echo $Array_ricoverati_con_sintomi[0];?> persone ricoverate con sintomi.</li>
-  <li> <?php echo $Array_totale_ospedalizzati[0];?> persone ospedalizzate. </li>
-  <li> <?php echo $Array_terapia_intensiva[0];?> persone in terapia intensiva. </li>
-  <li> <?php echo $Array_isolamento_domiciliare[0];?> persone in isolamento domiciliare. </li>
-  <li> <?php echo $Array_totale_attualmente_positivi[0];?> persone attualmente positive al Covid-19. </li>
-  <li> <?php echo $Array_nuovi_attualmente_positivi[0];?> nuovi casi di persone positive Covid-19. </li>
-  <li> <?php echo $Array_dimessi_guariti[0];?> persone guarite dal Covid-19. </li>
-</ul>
-
--->
 
 
 I dati fanno riferimento al giorno: <?php echo $lastUpdate;?> <br>
@@ -374,9 +357,7 @@ della Protezione Civile - Emergenza Coronavirus: la risposta nazionale</a> perta
                   <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 500px;">
                       <canvas id="line-chart-andamento-nazionale" height="300" style="height: 500px;"></canvas>                         
                    </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 500px;">
-                    <canvas id="sales-chart-canvas" height="500" style="height: 500px;"></canvas>                         
-                  </div>  
+               
                 </div>
               </div><!-- /.card-body -->
             </div>
@@ -396,9 +377,7 @@ della Protezione Civile - Emergenza Coronavirus: la risposta nazionale</a> perta
                   <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;">
                       <canvas id="line-chart-deceduti" height="300" style="height: 300px;"></canvas>                         
                    </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>                         
-                  </div>  
+                 
                 </div>
               </div><!-- /.card-body -->
             </div>
@@ -417,9 +396,7 @@ della Protezione Civile - Emergenza Coronavirus: la risposta nazionale</a> perta
                   <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;">
                       <canvas id="line-chart-isolamento_domiciliare" height="300" style="height: 300px;"></canvas>                         
                    </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>                         
-                  </div>  
+                
                 </div>
               </div><!-- /.card-body -->
             </div>

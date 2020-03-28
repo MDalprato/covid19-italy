@@ -49,10 +49,6 @@ foreach($arr as $item) {
     $tamponi                        = str_replace("'", '-', $tamponi);
 
 
-   
-    $format = 'Y-m-d H:i:s';
-    $date = DateTime::createFromFormat($format, $data);
-    $data = $date->format('Y-m-d');
 
     // creo sql
 

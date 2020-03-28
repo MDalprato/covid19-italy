@@ -62,10 +62,6 @@ foreach($arr as $item) {
 
 
 
-  
-    $format = 'Y-m-d H:i:s';
-    $date = DateTime::createFromFormat($format, $data);
-    $data = $date->format('Y-m-d');
 
     // creo sql
 

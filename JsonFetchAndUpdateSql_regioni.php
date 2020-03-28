@@ -62,9 +62,6 @@ foreach($arr as $item) {
     echo "<br>";    
 
 
-    $format = 'Y-m-d H:i:s';
-    $date = DateTime::createFromFormat($format, $data);
-    $data = $date->format('Y-m-d');
 
 
     echo "<br>";
