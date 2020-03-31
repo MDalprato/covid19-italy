@@ -22,7 +22,8 @@ if ($conn->query($sqlDelete) === TRUE) {
 foreach($arr as $item) { 
 
     /*
-       "data": "2020-02-24 18:00:00",
+{
+        "data": "2020-02-24T18:00:00",
         "stato": "ITA",
         "codice_regione": 13,
         "denominazione_regione": "Abruzzo",
@@ -31,7 +32,10 @@ foreach($arr as $item) {
         "sigla_provincia": "CH",
         "lat": 42.35103167,
         "long": 14.16754574,
-        "totale_casi": 0
+        "totale_casi": 0,
+        "note_it": "",
+        "note_en": ""
+    },
     */
     
     //Ottengo valori dal JSON

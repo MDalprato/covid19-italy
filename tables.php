@@ -295,8 +295,8 @@ $result = $conn->query($sql);
                         <td><?php echo $row['terapia_intensiva']; ?></td>
                         <td><?php echo $row['totale_ospedalizzati']; ?></td>
                         <td><?php echo $row['isolamento_domiciliare']; ?></td>
-                        <td><?php echo $row['totale_attualmente_positivi']; ?></td>
-                        <td><?php echo $row['nuovi_attualmente_positivi']; ?></td>
+                        <td><?php echo $row['totale_positivi']; ?></td>
+                        <td><?php echo $row['nuovi_positivi']; ?></td>
                         <td><?php echo $row['dimessi_guariti']; ?></td>
                         <td><?php echo $row['deceduti']; ?></td>
                         <td><?php echo $row['totale_casi']; ?></td>
@@ -409,8 +409,8 @@ $result = $conn->query($sql);
                             <td><?php echo $row['terapia_intensiva']; ?></td>
                             <td><?php echo $row['totale_ospedalizzati']; ?></td>
                             <td><?php echo $row['isolamento_domiciliare']; ?></td>
-                            <td><?php echo $row['totale_attualmente_positivi']; ?></td>
-                            <td><?php echo $row['nuovi_attualmente_positivi']; ?></td>
+                            <td><?php echo $row['totale_positivi']; ?></td>
+                            <td><?php echo $row['nuovi_positivi']; ?></td>
                             <td><?php echo $row['dimessi_guariti']; ?></td>
                             <td><?php echo $row['deceduti']; ?></td>
                             <td><?php echo $row['totale_casi']; ?></td>

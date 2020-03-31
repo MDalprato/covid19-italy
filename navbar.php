@@ -47,7 +47,7 @@
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item">
               <i class="fas fa-medkit mr-2"></i>Data: <?php echo $rowNavBar['data']; ?>
-              <span class="float-right text-muted text-sm">Casi: <?php echo $rowNavBar['nuovi_attualmente_positivi']; ?></span>
+              <span class="float-right text-muted text-sm">Casi: <?php echo $rowNavBar['nuovi_positivi']; ?></span>
             </a>
        
 

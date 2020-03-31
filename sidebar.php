@@ -68,7 +68,7 @@
               <li class="nav-item">
                 <a href="statsAndamentoNazionale.php" class="nav-link">
                 <i class="nav-icon far fa-circle text-info"></i>
-                  <p>Statistiche (Beta)</p>
+                  <p>Statistiche</p>
                 </a>
               </li>
 

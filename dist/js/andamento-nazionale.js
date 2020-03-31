@@ -41,12 +41,12 @@ $(function () {
     return item.isolamento_domiciliare;
     });
 
-    var totale_attualmente_positivi = results.map(function (item) {
-    return item.totale_attualmente_positivi;
+    var totale_positivi = results.map(function (item) {
+    return item.totale_positivi;
     });
 
-    var nuovi_attualmente_positivi = results.map(function (item) {
-    return item.nuovi_attualmente_positivi;
+    var nuovi_positivi = results.map(function (item) {
+    return item.nuovi_positivi;
     });
 
     var dimessi_guariti = results.map(function (item) {
@@ -137,7 +137,7 @@ $(function () {
         pointHoverRadius    : 7,
         pointColor          : '#40ff00',
         pointBackgroundColor: '#40ff00',
-        data                : totale_attualmente_positivi
+        data                : totale_positivi
       },
       {
         label               : 'Dimessi guariti',

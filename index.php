@@ -31,8 +31,8 @@ $result = mysqli_query($conn, $sql);
   $Array_terapia_intensiva = array();
   $Array_totale_ospedalizzati = array();
   $Array_isolamento_domiciliare = array();
-  $Array_totale_attualmente_positivi = array();
-  $Array_nuovi_attualmente_positivi= array();
+  $Array_totale_positivi = array();
+  $Array_nuovi_positivi= array();
   $Array_dimessi_guariti = array();
   $Array_deceduti = array();
   $Array_totale_casi = array();
@@ -46,8 +46,8 @@ $result = mysqli_query($conn, $sql);
     array_push($Array_terapia_intensiva,$row["terapia_intensiva"]);
     array_push($Array_totale_ospedalizzati,$row["totale_ospedalizzati"]);
     array_push($Array_isolamento_domiciliare,$row["isolamento_domiciliare"]);
-    array_push($Array_totale_attualmente_positivi,$row["totale_attualmente_positivi"]);
-    array_push($Array_nuovi_attualmente_positivi,$row["nuovi_attualmente_positivi"]);
+    array_push($Array_totale_positivi,$row["totale_positivi"]);
+    array_push($Array_nuovi_positivi,$row["nuovi_positivi"]);
     array_push($Array_dimessi_guariti,$row["dimessi_guariti"]);
     array_push($Array_deceduti,$row["deceduti"]);
     array_push($Array_totale_casi,$row["totale_casi"]);
@@ -61,8 +61,8 @@ $result = mysqli_query($conn, $sql);
   $diff_terapia_intensiva = $Array_terapia_intensiva[0] -  $Array_terapia_intensiva[1] ;
   $diff_totale_ospedalizzati = $Array_totale_ospedalizzati[0] -  $Array_totale_ospedalizzati[1] ;
   $diff_isolamento_domiciliare = $Array_isolamento_domiciliare[0] -  $Array_isolamento_domiciliare[1] ;
-  $diff_totale_attualmente_positivi= $Array_totale_attualmente_positivi[0] -  $Array_totale_attualmente_positivi[1] ;
-  $diff_nuovi_attualmente_positivi = $Array_nuovi_attualmente_positivi[0] -  $Array_nuovi_attualmente_positivi[1] ;
+  $diff_totale_positivi= $Array_totale_positivi[0] -  $Array_totale_positivi[1] ;
+  $diff_nuovi_positivi = $Array_nuovi_positivi[0] -  $Array_nuovi_positivi[1] ;
   $diff_dimessi_guariti = $Array_dimessi_guariti[0] -  $Array_dimessi_guariti[1] ;
   $diff_deceduti = $Array_deceduti[0] -  $Array_deceduti[1] ;
   $diff_totale_casi = $Array_totale_casi[0] -  $Array_totale_casi[1] ;
@@ -97,18 +97,18 @@ $result = mysqli_query($conn, $sql);
     $diff_isolamento_domiciliare =  $diff_isolamento_domiciliare. " rispetto a ieri";
   }
 
-  if($diff_totale_attualmente_positivi > 0){ 
-    $diff_totale_attualmente_positivi = "+" . $diff_totale_attualmente_positivi. " rispetto a ieri";
+  if($diff_totale_positivi > 0){ 
+    $diff_totale_positivi = "+" . $diff_totale_positivi. " rispetto a ieri";
   }
     else{
-    $diff_totale_attualmente_positivi =  $diff_totale_attualmente_positivi. " rispetto a ieri";
+    $diff_totale_positivi =  $diff_totale_positivi. " rispetto a ieri";
   }
 
-  if($diff_nuovi_attualmente_positivi > 0){ 
-    $diff_nuovi_attualmente_positivi = "+" . $diff_nuovi_attualmente_positivi. " rispetto a ieri";
+  if($diff_nuovi_positivi > 0){ 
+    $diff_nuovi_positivi = "+" . $diff_nuovi_positivi. " rispetto a ieri";
   }
     else{
-    $diff_nuovi_attualmente_positivi =  $diff_nuovi_attualmente_positivi. " rispetto a ieri";
+    $diff_nuovi_positivi =  $diff_nuovi_positivi. " rispetto a ieri";
   }
 
   if($diff_dimessi_guariti > 0){ 
@@ -217,6 +217,18 @@ della Protezione Civile - Emergenza Coronavirus: la risposta nazionale</a> perta
               </div>
             </div>
           </div>
+<!--
+          <div class="col-lg-3 col-12">
+            <div class="small-box bg-secondary">
+              <div class="inner">
+              <h3>V_tota Positivi</h3>
+              <h2><?php  echo $row['variazione_totale_positivi']; ?></h2>
+
+              </div>
+            </div>
+          </div>
+
+          -->
           
           <div class="col-lg-3 col-12">
             <!-- small box -->
@@ -248,8 +260,8 @@ della Protezione Civile - Emergenza Coronavirus: la risposta nazionale</a> perta
               <div class="inner">
               <h3>Nuovi positivi</h3>
                 <p>
-                <h2><?php  echo $row['nuovi_attualmente_positivi']; ?></h2>
-                <p><?php  echo $diff_nuovi_attualmente_positivi; ?></p>
+                <h2><?php  echo $row['nuovi_positivi']; ?></h2>
+                <p><?php  echo $diff_nuovi_positivi; ?></p>
 
               </div>
             </div>
@@ -316,8 +328,8 @@ della Protezione Civile - Emergenza Coronavirus: la risposta nazionale</a> perta
             <div class="small-box bg-warning">
               <div class="inner">
               <h3>Totale positivi</h3>
-              <h2><?php  echo $row['totale_attualmente_positivi']; ?></h2>
-              <p><?php  echo $diff_totale_attualmente_positivi; ?></p>
+              <h2><?php  echo $row['totale_positivi']; ?></h2>
+              <p><?php  echo $diff_totale_positivi; ?></p>
 
               </div>
             </div>

@@ -11,8 +11,8 @@ $Array_ricoverati_con_sintomi = array();
 $Array_terapia_intensiva = array();
 $Array_totale_ospedalizzati = array();
 $Array_isolamento_domiciliare = array();
-$Array_totale_attualmente_positivi = array();
-$Array_nuovi_attualmente_positivi= array();
+$Array_totale_positivi = array();
+$Array_nuovi_positivi= array();
 $Array_dimessi_guariti = array();
 $Array_deceduti = array();
 $Array_totale_casi = array();
@@ -48,8 +48,8 @@ $id = 0 ;
       $terapia_intensiva              =  $row['terapia_intensiva'];
       $totale_ospedalizzati           =  $row['totale_ospedalizzati'];
       $isolamento_domiciliare         =  $row['isolamento_domiciliare'];
-      $totale_attualmente_positivi    =  $row['totale_attualmente_positivi'];
-      $nuovi_attualmente_positivi     =  $row['nuovi_attualmente_positivi'];
+      $totale_positivi    =  $row['totale_positivi'];
+      $nuovi_positivi     =  $row['nuovi_positivi'];
       $dimessi_guariti                =  $row['dimessi_guariti'];
       $deceduti                       =  $row['deceduti'];
       $totale_casi                    =  $row['totale_casi'];
@@ -63,8 +63,8 @@ $id = 0 ;
       $terapia_intensiva              = str_replace("'", '-', $terapia_intensiva);
       $totale_ospedalizzati           = str_replace("'", '-', $totale_ospedalizzati);
       $isolamento_domiciliare         = str_replace("'", '-', $isolamento_domiciliare);
-      $totale_attualmente_positivi    = str_replace("'", '-', $totale_attualmente_positivi);
-      $nuovi_attualmente_positivi     = str_replace("'", '-', $nuovi_attualmente_positivi);
+      $totale_positivi    = str_replace("'", '-', $totale_positivi);
+      $nuovi_positivi     = str_replace("'", '-', $nuovi_positivi);
       $dimessi_guariti                = str_replace("'", '-', $dimessi_guariti);
       $deceduti                       = str_replace("'", '-', $deceduti);
       $totale_casi                    = str_replace("'", '-', $totale_casi);
@@ -78,8 +78,8 @@ $id = 0 ;
       array_push($Array_terapia_intensiva,$terapia_intensiva);
       array_push($Array_totale_ospedalizzati,$totale_ospedalizzati);
       array_push($Array_isolamento_domiciliare,$isolamento_domiciliare);
-      array_push($Array_totale_attualmente_positivi,$totale_attualmente_positivi);
-      array_push($Array_nuovi_attualmente_positivi,$nuovi_attualmente_positivi);
+      array_push($Array_totale_positivi,$totale_positivi);
+      array_push($Array_nuovi_positivi,$nuovi_positivi);
       array_push($Array_dimessi_guariti,$dimessi_guariti);
       array_push($Array_deceduti,$deceduti);
       array_push($Array_totale_casi,$totale_casi);
@@ -99,8 +99,6 @@ $id = 0 ;
   
 }
 
-
-echo "ciao";
 
 
 class Predict {
@@ -177,8 +175,8 @@ $Array_ricoverati_con_sintomi = new Predict($Array_ricoverati_con_sintomi);
 $Array_terapia_intensiva = new Predict($Array_terapia_intensiva);
 $Array_totale_ospedalizzati = new Predict($Array_totale_ospedalizzati);
 $Array_isolamento_domiciliare = new Predict($Array_isolamento_domiciliare);
-$Array_totale_attualmente_positivi = new Predict($Array_totale_attualmente_positivi);
-$Array_nuovi_attualmente_positivi = new Predict($Array_nuovi_attualmente_positivi);
+$Array_totale_positivi = new Predict($Array_totale_positivi);
+$Array_nuovi_positivi = new Predict($Array_nuovi_positivi);
 $Array_dimessi_guariti = new Predict($Array_dimessi_guariti);
 $Array_deceduti = new Predict($Array_deceduti);
 $Array_totale_casi = new Predict($Array_totale_casi);
@@ -193,8 +191,8 @@ $Array_ricoverati_con_sintomi = "[" . $Array_ricoverati_con_sintomi->getPattern(
 $Array_terapia_intensiva = "[" . $Array_terapia_intensiva->getPattern() . "]";
 $Array_totale_ospedalizzati = "[" . $Array_totale_ospedalizzati->getPattern() . "]";
 $Array_isolamento_domiciliare = "[" . $Array_isolamento_domiciliare->getPattern() . "]";
-$Array_totale_attualmente_positivi = "[" . $Array_totale_attualmente_positivi->getPattern() . "]";
-$Array_nuovi_attualmente_positivi = "[" . $Array_nuovi_attualmente_positivi->getPattern() . "]";
+$Array_totale_positivi = "[" . $Array_totale_positivi->getPattern() . "]";
+$Array_nuovi_positivi = "[" . $Array_nuovi_positivi->getPattern() . "]";
 $Array_dimessi_guariti = "[" . $Array_dimessi_guariti->getPattern() . "]";
 $Array_deceduti = "[" . $Array_deceduti->getPattern() . "]";
 $Array_totale_casi = "[" . $Array_totale_casi->getPattern() . "]";
@@ -232,10 +230,10 @@ $Array_date = "[" . "'" . implode("','", $Array_date) . "'" . "]";
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-		<p>
+		  <p>
 		
-		Grafici con gli andamenti (positivi o negativi) rispetto al giorno precedente. (Beta)
-		</p>
+		Grafici con gli andamenti (positivi o negativi) rispetto al giorno precedente.
+	  	</p>
 		
 		   <!-- Main row -->
 		   <div class="row">
@@ -252,7 +250,7 @@ $Array_date = "[" . "'" . implode("','", $Array_date) . "'" . "]";
                 
                   <!-- Morris chart - Sales -->
                   <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 900px;">
-                      <canvas id="myChart" height="300" style="height: 900px;"></canvas>                         
+                      <canvas id="line-chart-stats-andamento-nazionale" height="300" style="height: 900px;"></canvas>                         
                    </div>
                
                 </div>
@@ -261,6 +259,10 @@ $Array_date = "[" . "'" . implode("','", $Array_date) . "'" . "]";
             <!-- /.card -->
           </section>
 
+        </div>
+        </div>
+
+  </div>
 <script>
 
 var ChartOptions = {
@@ -317,7 +319,7 @@ datasets: [
     pointHoverRadius    : 7,
     pointColor          : '#20B2AA',
     pointBackgroundColor: '#20B2AA',
-    data                : <?php echo $Array_nuovi_attualmente_positivi ?>,
+    data                : <?php echo $Array_nuovi_positivi ?>,
    
   },
   {
@@ -386,7 +388,7 @@ datasets: [
     pointHoverRadius    : 7,
     pointColor          : '#008B8B',
     pointBackgroundColor: '#008B8B',
-    data                : <?php echo $Array_totale_attualmente_positivi ?>,
+    data                : <?php echo $Array_totale_positivi ?>,
   },
   {
     label               : 'Dimessi guariti',
@@ -448,7 +450,7 @@ datasets: [
 
 
 
-              var ctx = document.getElementById("myChart");
+              var ctx = document.getElementById("line-chart-stats-andamento-nazionale");
               var myChart = new Chart(ctx, {
                   type: 'line',
                   data: ChartData,

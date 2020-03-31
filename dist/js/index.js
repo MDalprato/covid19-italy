@@ -41,12 +41,12 @@ $(function () {
     return item.isolamento_domiciliare;
     });
 
-    var totale_attualmente_positivi = results.map(function (item) {
-    return item.totale_attualmente_positivi;
+    var totale_positivi = results.map(function (item) {
+    return item.totale_positivi;
     });
 
-    var nuovi_attualmente_positivi = results.map(function (item) {
-    return item.nuovi_attualmente_positivi;
+    var nuovi_positivi = results.map(function (item) {
+    return item.nuovi_positivi;
     });
 
     var dimessi_guariti = results.map(function (item) {
@@ -66,6 +66,12 @@ $(function () {
     });
 
 
+    var variazione_totale_positivi = results.map(function (item) {
+      return item.variazione_totale_positivi;
+      });
+  
+  
+
 
   var andamentoNazionaleChartData = {
 
@@ -83,7 +89,7 @@ $(function () {
         pointHoverRadius    : 7,
         pointColor          : '#20B2AA',
         pointBackgroundColor: '#20B2AA',
-        data                : nuovi_attualmente_positivi,
+        data                : nuovi_positivi,
        
       },
       {
@@ -142,7 +148,7 @@ $(function () {
         data                : isolamento_domiciliare
       },
       {
-        label               : 'Totale attualmente positivi',
+        label               : 'Totale positivi',
         fill                : false,
         borderWidth         : 2,
         lineTension         : 0,
@@ -152,7 +158,7 @@ $(function () {
         pointHoverRadius    : 7,
         pointColor          : '#008B8B',
         pointBackgroundColor: '#008B8B',
-        data                : totale_attualmente_positivi
+        data                : totale_positivi
       },
       {
         label               : 'Dimessi guariti',
@@ -207,7 +213,21 @@ $(function () {
         hidden: true,
         data                : tamponi,
         
-      }
+      },
+      {
+        label               : 'Variazione Totale Positivi',
+        fill                : false,
+        borderWidth         : 1,
+        lineTension         : 0,
+        spanGaps : true,
+        borderColor         : '#ff6347',
+        pointRadius         : 2,
+        pointHoverRadius    : 7,
+        pointColor          : '#ff6347',
+        pointBackgroundColor: '#ff6347',
+        data                : variazione_totale_positivi,
+       
+      },
     ]
   }
 
@@ -251,7 +271,7 @@ $(function () {
     labels  : labels,
     datasets: [
       {
-        label               : 'Totale attualmente positivi',
+        label               : 'Totale positivi',
         fill                : false,
         borderWidth         : 2,
         lineTension         : 0,
@@ -261,7 +281,7 @@ $(function () {
         pointHoverRadius    : 7,
         pointColor          : '#0000CD',
         pointBackgroundColor: '#0000CD',
-        data                : totale_attualmente_positivi
+        data                : totale_positivi
       }, {
         label               : 'Nuovi positivi',
         fill                : false,
@@ -273,7 +293,7 @@ $(function () {
         pointHoverRadius    : 7,
         pointColor          : '#20B2AA',
         pointBackgroundColor: '#20B2AA',
-        data                : nuovi_attualmente_positivi,
+        data                : nuovi_positivi,
        
       },{
         label               : 'Tamponi',

@@ -33,8 +33,10 @@ foreach($arr as $item) {
     $terapia_intensiva              = html_entity_decode($item['terapia_intensiva'], ENT_QUOTES, "UTF-8");
     $totale_ospedalizzati           = html_entity_decode($item['totale_ospedalizzati'], ENT_QUOTES, "UTF-8");
     $isolamento_domiciliare         = html_entity_decode($item['isolamento_domiciliare'], ENT_QUOTES, "UTF-8");
-    $totale_attualmente_positivi    = html_entity_decode($item['totale_attualmente_positivi'], ENT_QUOTES, "UTF-8");
-    $nuovi_attualmente_positivi     = html_entity_decode($item['nuovi_attualmente_positivi'], ENT_QUOTES, "UTF-8");
+    $totale_positivi                = html_entity_decode($item['totale_positivi'], ENT_QUOTES, "UTF-8");
+    $variazione_totale_positivi     = html_entity_decode($item['variazione_totale_positivi'], ENT_QUOTES, "UTF-8");
+
+    $nuovi_positivi                 = html_entity_decode($item['nuovi_positivi'], ENT_QUOTES, "UTF-8");
     $dimessi_guariti                = html_entity_decode($item['dimessi_guariti'], ENT_QUOTES, "UTF-8");
     $deceduti                       = html_entity_decode($item['deceduti'], ENT_QUOTES, "UTF-8");
     $totale_casi                    = html_entity_decode($item['totale_casi'], ENT_QUOTES, "UTF-8");
@@ -52,8 +54,9 @@ foreach($arr as $item) {
     $terapia_intensiva              = str_replace("'", '-', $terapia_intensiva);
     $totale_ospedalizzati           = str_replace("'", '-', $totale_ospedalizzati);
     $isolamento_domiciliare         = str_replace("'", '-', $isolamento_domiciliare);
-    $totale_attualmente_positivi    = str_replace("'", '-', $totale_attualmente_positivi);
-    $nuovi_attualmente_positivi     = str_replace("'", '-', $nuovi_attualmente_positivi);
+    $totale_positivi                = str_replace("'", '-', $totale_positivi);
+    $variazione_totale_positivi     = str_replace("'", '-', $variazione_totale_positivi);
+    $nuovi_positivi                 = str_replace("'", '-', $nuovi_positivi);
     $dimessi_guariti                = str_replace("'", '-', $dimessi_guariti);
     $deceduti                       = str_replace("'", '-', $deceduti);
     $totale_casi                    = str_replace("'", '-', $totale_casi);
@@ -67,6 +70,32 @@ foreach($arr as $item) {
     echo "<br>";
 
 
+    /*
+
+         {
+        "data": "2020-02-24T18:00:00",
+        "stato": "ITA",
+        "codice_regione": 13,
+        "denominazione_regione": "Abruzzo",
+        "lat": 42.35122196,
+        "long": 13.39843823,
+        "ricoverati_con_sintomi": 0,
+        "terapia_intensiva": 0,
+        "totale_ospedalizzati": 0,
+        "isolamento_domiciliare": 0,
+        "totale_positivi": 0,
+        "variazione_totale_positivi": 0,
+        "nuovi_positivi": 0,
+        "dimessi_guariti": 0,
+        "deceduti": 0,
+        "totale_casi": 0,
+        "tamponi": 5,
+        "note_it": "",
+        "note_en": ""
+    },
+
+    */
+
     $sql = "INSERT INTO `dpc-covid19-ita-regioni`(
     `data`, 
     `stato`, 
@@ -78,8 +107,9 @@ foreach($arr as $item) {
     `terapia_intensiva`, 
     `totale_ospedalizzati`,
     `isolamento_domiciliare`,
-    `totale_attualmente_positivi`, 
-    `nuovi_attualmente_positivi`, 
+    `totale_positivi`, 
+    `variazione_totale_positivi`, 
+    `nuovi_positivi`, 
     `dimessi_guariti`, 
     `deceduti`, 
     `totale_casi`,
@@ -94,8 +124,9 @@ foreach($arr as $item) {
     '".$terapia_intensiva."', 
     '".$totale_ospedalizzati."', 
     '".$isolamento_domiciliare."', 
-    '".$totale_attualmente_positivi."', 
-    '".$nuovi_attualmente_positivi."', 
+    '".$totale_positivi."', 
+    '".$variazione_totale_positivi."', 
+    '".$nuovi_positivi."', 
     '".$dimessi_guariti."', 
     '".$deceduti."', 
     '".$totale_casi."', 

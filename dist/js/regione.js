@@ -18,8 +18,8 @@ $(function () {
       return item.deceduti;
     });
 
-    var nuovi_attualmente_positivi = results.map(function (item) {
-      return item.nuovi_attualmente_positivi;
+    var nuovi_positivi = results.map(function (item) {
+      return item.nuovi_positivi;
     });
 
 

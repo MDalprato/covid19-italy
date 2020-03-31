@@ -104,12 +104,12 @@ function createTable(a,b) {
     return item.isolamento_domiciliare;
     });
 
-    var totale_attualmente_positivi = results.map(function (item) {
-    return item.totale_attualmente_positivi;
+    var totale_positivi = results.map(function (item) {
+    return item.totale_positivi;
     });
 
-    var nuovi_attualmente_positivi = results.map(function (item) {
-    return item.nuovi_attualmente_positivi;
+    var nuovi_positivi = results.map(function (item) {
+    return item.nuovi_positivi;
     });
 
     var dimessi_guariti = results.map(function (item) {
@@ -151,7 +151,7 @@ function createTable(a,b) {
             pointHoverRadius    : 7,
             pointColor          : '#20B2AA',
             pointBackgroundColor: '#20B2AA',
-            data                : nuovi_attualmente_positivi,
+            data                : nuovi_positivi,
            
           },
           {
@@ -210,7 +210,7 @@ function createTable(a,b) {
             data                : isolamento_domiciliare
           },
           {
-            label               : 'Totale attualmente positivi',
+            label               : 'Totale positivi',
             fill                : false,
             borderWidth         : 2,
             lineTension         : 0,
@@ -220,7 +220,7 @@ function createTable(a,b) {
             pointHoverRadius    : 7,
             pointColor          : '#008B8B',
             pointBackgroundColor: '#008B8B',
-            data                : totale_attualmente_positivi
+            data                : totale_positivi
           },
           {
             label               : 'Dimessi guariti',
@@ -346,11 +346,11 @@ function createTable(a,b) {
         data                : isolamento_domiciliare
       },
       {
-        label               : 'Totale attualmente positivi',
+        label               : 'Totale positivi',
     
         backgroundColor: '#40ff00',
         borderColor    : '#40ff00',
-        data                : totale_attualmente_positivi
+        data                : totale_positivi
       },
       {
         label               : 'Dimessi guariti',
