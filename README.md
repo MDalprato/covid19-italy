@@ -6,6 +6,7 @@ All rights reserved.
 
 Questo repository contiene i sorgenti per il tracking e il gathering delle informazioni presenti sul sito http://covid19italy.it/ 
 
+Il sistema fa riferimento a questi dati: https://github.com/pcm-dpc/COVID-19
 
 
 
